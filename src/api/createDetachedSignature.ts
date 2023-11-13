@@ -49,6 +49,7 @@ export const createDetachedSignature = _afterPluginsLoaded(
         let cadesAuthAttrs;
 
         try {
+          void(__cadesAsyncToken__ + cadesCertificate.PrivateKey.propset_CachePin(true));
           void (__cadesAsyncToken__ + cadesSigner.propset_Certificate(cadesCertificate));
           cadesAuthAttrs = __cadesAsyncToken__ + cadesSigner.AuthenticatedAttributes2;
           void (__cadesAsyncToken__ + cadesAuthAttrs.Add(cadesAttrs));
