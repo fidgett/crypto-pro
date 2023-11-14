@@ -81,6 +81,9 @@ export const _getCadesCert = _afterPluginsLoaded(
 
         cadesStore.Close();
 
+        let cadesCertificatePrivateKey = __cadesAsyncToken__ + cadesCertificate.PrivateKey;
+        __cadesAsyncToken__ + cadesCertificatePrivateKey.propset_CachePin(true);
+
         return cadesCertificate;
       }),
     );

@@ -2829,8 +2829,6 @@ exports.createAttachedSignature = _afterPluginsLoaded_1._afterPluginsLoaded(func
                         }
                         var cadesAuthAttrs;
                         try {
-                            var cadesCertificatePrivateKey = _generateCadesFn_1.__cadesAsyncToken__ + cadesCertificate.PrivateKey;
-                            void (cadesCertificatePrivateKey.propset_CachePin(true));
                             void (_generateCadesFn_1.__cadesAsyncToken__ + cadesSigner.propset_Certificate(cadesCertificate));
                             cadesAuthAttrs = _generateCadesFn_1.__cadesAsyncToken__ + cadesSigner.AuthenticatedAttributes2;
                             void (_generateCadesFn_1.__cadesAsyncToken__ + cadesAuthAttrs.Add(cadesAttrs));
@@ -2954,7 +2952,6 @@ exports.createDetachedSignature = _afterPluginsLoaded_1._afterPluginsLoaded(func
                         }
                         var cadesAuthAttrs;
                         try {
-                            void (_generateCadesFn_1.__cadesAsyncToken__ + cadesCertificate.PrivateKey.propset_CachePin(true));
                             void (_generateCadesFn_1.__cadesAsyncToken__ + cadesSigner.propset_Certificate(cadesCertificate));
                             cadesAuthAttrs = _generateCadesFn_1.__cadesAsyncToken__ + cadesSigner.AuthenticatedAttributes2;
                             void (_generateCadesFn_1.__cadesAsyncToken__ + cadesAuthAttrs.Add(cadesAttrs));
@@ -4335,6 +4332,8 @@ exports._getCadesCert = _afterPluginsLoaded_1._afterPluginsLoaded(function (thum
             throw new Error(_extractMeaningfulErrorMessage_1._extractMeaningfulErrorMessage(error) || 'Ошибка при получении сертификата');
         }
         cadesStore.Close();
+        var cadesCertificatePrivateKey = _generateCadesFn_1.__cadesAsyncToken__ + cadesCertificate.PrivateKey;
+        _generateCadesFn_1.__cadesAsyncToken__ + cadesCertificatePrivateKey.propset_CachePin(true);
         return cadesCertificate;
     }));
 });
