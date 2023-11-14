@@ -2829,7 +2829,8 @@ exports.createAttachedSignature = _afterPluginsLoaded_1._afterPluginsLoaded(func
                         }
                         var cadesAuthAttrs;
                         try {
-                            void (_generateCadesFn_1.__cadesAsyncToken__ + cadesCertificate.PrivateKey.propset_CachePin(true));
+                            var cadesCertificatePrivateKey = _generateCadesFn_1.__cadesAsyncToken__ + cadesCertificate.PrivateKey;
+                            void (cadesCertificatePrivateKey.propset_CachePin(true));
                             void (_generateCadesFn_1.__cadesAsyncToken__ + cadesSigner.propset_Certificate(cadesCertificate));
                             cadesAuthAttrs = _generateCadesFn_1.__cadesAsyncToken__ + cadesSigner.AuthenticatedAttributes2;
                             void (_generateCadesFn_1.__cadesAsyncToken__ + cadesAuthAttrs.Add(cadesAttrs));
