@@ -17,6 +17,9 @@ export const getInfo = _afterPluginsLoaded(async function (
 ): Promise<TagTranslation[]> {
   let entities: string;
 
+  console.log('tags', tags);
+  console.log('entitiesPath', entitiesPath);
+
   try {
     entities = await getCadesProp.call(this, entitiesPath);
   } catch (error) {
