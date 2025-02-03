@@ -2580,20 +2580,16 @@ exports.getInfo = _afterPluginsLoaded_1._afterPluginsLoaded(function (tags, enti
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
-                    console.log('tags', tags);
-                    console.log('entitiesPath', entitiesPath);
-                    _a.label = 1;
-                case 1:
-                    _a.trys.push([1, 3, , 4]);
+                    _a.trys.push([0, 2, , 3]);
                     return [4 /*yield*/, getCadesProp_1.getCadesProp.call(this, entitiesPath)];
-                case 2:
+                case 1:
                     entities = _a.sent();
-                    return [3 /*break*/, 4];
-                case 3:
+                    return [3 /*break*/, 3];
+                case 2:
                     error_1 = _a.sent();
                     console.error(error_1);
                     throw new Error(_extractMeaningfulErrorMessage_1._extractMeaningfulErrorMessage(error_1) || 'Ошибка при извлечении информации из сертификата');
-                case 4: return [2 /*return*/, _parseCertInfo_1._parseCertInfo(tags, entities)];
+                case 3: return [2 /*return*/, _parseCertInfo_1._parseCertInfo(tags, entities)];
             }
         });
     });
